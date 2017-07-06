@@ -1,0 +1,20 @@
+
+table#dane {
+    border-collapse: collapse;
+    width: 1000px;
+}
+#dane td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+    padding: 5px; }
+#dane .header {
+    background-color: #dbe5f1;
+    font-weight: bold; }
+#dane .emp {
+    background-color: #f3f3f3; }
+
+div#pozycja{
+    padding-left: 500px;
+
+}

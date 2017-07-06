@@ -1,0 +1,65 @@
+#włączenie mod_rewrite
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^Home/?$ index.php?controller=Home [L]
+RewriteRule ^Home/opis/?$ index.php?controller=Home&action=opis  [L]
+
+RewriteRule ^Kolejka/?$ index.php?controller=Kolejka [L]
+RewriteRule ^Kolejka/showone/(\d+)/?$ index.php?controller=Kolejka&action=showone&id=$1 [L]
+RewriteRule ^Kolejka/delete/(\d+)/?$ index.php?controller=Kolejka&action=delete&id=$1 [L]
+RewriteRule ^Kolejka/add/?$ index.php?controller=Kolejka&action=add [L]
+RewriteRule ^Kolejka/insert/?$ index.php?controller=Kolejka&action=insert [L]
+RewriteRule ^Kolejka/update/(\d+)/?$ index.php?controller=Kolejka&action=update&id=$1 [L]
+RewriteRule ^Kolejka/run/(\d+)/?$ index.php?controller=Kolejka&action=run&id=$1 [L]
+RewriteRule ^Kolejka/end/(\d+)/?$ index.php?controller=Kolejka&action=end&id=$1 [L]
+
+RewriteRule ^Mecz/?$ index.php?controller=Mecz [L]
+RewriteRule ^Mecz/index/(\d+)/?$ index.php?controller=Mecz&action=index&id=$1 [L]
+RewriteRule ^Mecz/showone/(\d+)/?$ index.php?controller=Mecz&action=showone&id=$1 [L]
+RewriteRule ^Mecz/showone2/(\d+)/?$ index.php?controller=Mecz&action=showone2&id=$1 [L]
+RewriteRule ^Mecz/delete/(\d+)/?$ index.php?controller=Mecz&action=delete&id=$1 [L]
+RewriteRule ^Mecz/delete2/(\d+)/?$ index.php?controller=Mecz&action=delete2&id=$1 [L]
+RewriteRule ^Mecz/add/(\d+)/?$ index.php?controller=Mecz&action=add&id=$1 [L]
+RewriteRule ^Mecz/insert/?$ index.php?controller=Mecz&action=insert [L]
+RewriteRule ^Mecz/insert2/?$ index.php?controller=Mecz&action=insert2 [L]
+RewriteRule ^Mecz/update/(\d+)/?$ index.php?controller=Mecz&action=update&id=$1 [L]
+RewriteRule ^Mecz/insertResult/(\d+)/?$ index.php?controller=Mecz&action=insertResult&id=$1 [L]
+
+RewriteRule ^Sezon/?$ index.php?controller=Sezon [L]
+RewriteRule ^Sezon/showone/(\d+)/?$ index.php?controller=Sezon&action=showone&id=$1 [L]
+RewriteRule ^Sezon/delete/(\d+)/?$ index.php?controller=Sezon&action=delete&id=$1 [L]
+RewriteRule ^Sezon/add/?$ index.php?controller=Sezon&action=add [L]
+RewriteRule ^Sezon/insert/?$ index.php?controller=Sezon&action=insert [L]
+RewriteRule ^Sezon/insert2/?$ index.php?controller=Sezon&action=insert2 [L]
+RewriteRule ^Sezon/update/(\d+)/?$ index.php?controller=Sezon&action=update&id=$1 [L]
+
+RewriteRule ^Uzytkownik/?$ index.php?controller=Uzytkownik [L]
+RewriteRule ^Uzytkownik/showone/(\d+)/?$ index.php?controller=Uzytkownik&action=showone&id=$1 [L]
+RewriteRule ^Uzytkownik/delete/(\d+)/?$ index.php?controller=Uzytkownik&action=delete&id=$1 [L]
+RewriteRule ^Uzytkownik/add/?$ index.php?controller=Uzytkownik&action=add [L]
+RewriteRule ^Uzytkownik/insert/?$ index.php?controller=Uzytkownik&action=insert [L]
+RewriteRule ^Uzytkownik/update/(\d+)/?$ index.php?controller=Uzytkownik&action=update&id=$1 [L]
+
+
+RewriteRule ^Typ/?$ index.php?controller=Typ [L]
+RewriteRule ^Typ/showMecz/(\d+)/?$ index.php?controller=Typ&action=showMecz&id=$1 [L]
+RewriteRule ^Typ/showone/(\d+)/?$ index.php?controller=Typ&action=showone&id=$1 [L]
+RewriteRule ^Typ/delete/(\d+)/?$ index.php?controller=Typ&action=delete&id=$1 [L]
+RewriteRule ^Typ/add/?$ index.php?controller=Typ&action=add [L]
+RewriteRule ^Typ/historia/?$ index.php?controller=Typ&action=historia [L]
+RewriteRule ^Typ/insert/?$ index.php?controller=Typ&action=insert [L]
+RewriteRule ^Typ/update/(\d+)/?$ index.php?controller=Typ&action=update&id=$1 [L]
+RewriteRule ^Typ/showHistoria/(\d+)/?$ index.php?controller=Typ&action=showHistoria&id=$1 [L]
+RewriteRule ^Typ/insertResult/(\d+)/?$ index.php?controller=Typ&action=insertResult&id=$1 [L]
+
+RewriteRule ^Klasyfikacja/?$ index.php?controller=Klasyfikacja [L]
+
+RewriteRule ^Access/logform/?$ index.php?controller=Access&action=logform [L]
+RewriteRule ^Access/login/?$ index.php?controller=Access&action=login [L]
+RewriteRule ^Access/logout/?$ index.php?controller=Access&action=logout [L]
+
+ErrorDocument 404 http://localhost/typer/errors/404.html
